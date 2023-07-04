@@ -1,0 +1,27 @@
+.product-container{
+    width: 100%;
+    height: 100%;
+    h1{
+        text-align: center;
+    }
+    .list-product {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 20px;
+            .product-item {
+                    width: 200px;
+                    height: 400px;
+                    .product-avt{
+                        width: 288px;
+                        height: 200px;
+                    }
+            }
+            
+        }
+}
+
+

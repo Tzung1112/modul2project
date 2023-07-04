@@ -1,0 +1,29 @@
+//reset thuộc tính css
+*   { 
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+}
+.App {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .nav-container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        .nav-containers{
+            width: 100%;
+            max-width: 1440px;
+            height: 100%;
+        }
+    }
+    .app_container {
+        width: 100%;
+        max-width:1440px;
+        height: 100%;
+    }
+}

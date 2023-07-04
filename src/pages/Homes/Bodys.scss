@@ -1,0 +1,43 @@
+.body-container{
+    background-color:rgb(33, 37, 41);
+    width: 100%;
+    height:290px;
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    .img-render{
+        width: 250px;
+        height: 250px;
+        background-color:rgb(33, 37, 41);
+        img{
+            width: 250px;
+                height: 250px;
+        }
+    }
+   
+}
+ .storyContainer {
+     display: flex;
+     justify-content: center;
+     width: 100%;
+     height: 650px;
+     background-color:rgb(33, 37, 41);
+     color: #fff;
+    .imageContainer  {
+        flex: 1.8;
+           background-color: rgb(33, 37, 41);
+            padding: 40px;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+           
+    
+        }
+    .contentStory{
+        flex: 1;
+        padding: 70px;
+    }
+
+     
+ }
