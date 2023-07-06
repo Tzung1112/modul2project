@@ -13,9 +13,22 @@ const login = createAsyncThunk(
         }
     }
 )
+
 const checkTokenLocal = createAsyncThunk(
     "checkTokenLocal",
     async (token) => {
+        // localhost:4000/users
+        let res = await axios.get(process.env.REACT_APP_SERVER_JSON + 'users');
+        return {
+            users: res.data,
+            token: token
+        }
+    }
+)
+const checkUser = createAsyncThunk(
+    "checkUser",
+    async (token) => {
+        console.log("🚀 ~ file: userLogin.slice.js:30 ~ token:", token)
         // localhost:4000/users
         let res = await axios.get(process.env.REACT_APP_SERVER_JSON + 'users');
         return {
@@ -37,6 +50,7 @@ function checkToken(token, privateKey, keyEnv) {
         const decryptedData = CryptoJS.AES.decrypt(token, privateKey)
             .toString(CryptoJS.enc.Utf8);
         return JSON.parse(decryptedData)
+
     } catch {
         //console.log("key lỗi")
         return false
@@ -48,7 +62,8 @@ const userLoginSlice = createSlice(
         name: "userLogin",
         initialState: {
             loading: false,
-            userInfor: null
+            userInfor: null,
+            loginUser: []
         },
         reducers: {
         },
@@ -56,11 +71,12 @@ const userLoginSlice = createSlice(
             // login
             builder.addCase(login.fulfilled, (state, action) => {
                 let user = action.payload.users.find(user => user.userName == action.payload.inforLogin.userName);
+                // tìm kiếm userName giống giữa dữ liệu truyền vào vàd mảng đã có
                 if (!user) {
                     alert("Không tìm thấy người dùng")
                 } else {
                     if (user.password != action.payload.inforLogin.password) {
-                        alert("Mật khẩu không chính xác")
+                        alert("Mật khẩu không chính xác");
                     } else {
                         state.userInfor = user; // cập nhật lại state
                         // tạo token và lưu vào local storage
@@ -73,15 +89,34 @@ const userLoginSlice = createSlice(
             });
             // check token
             builder.addCase(checkTokenLocal.fulfilled, (state, action) => {
-                console.log("du lieu khi checktoken", action.payload)
                 let deToken = checkToken(action.payload.token, process.env.REACT_APP_JWT_KEY, process.env.REACT_APP_JWT_KEY);
                 let user = action.payload.users.find(user => user.userName == deToken.userName);
-                if (user) {
-                    if (user.password == deToken.password) {
-                        state.userInfor = deToken;
+                if (deToken) {
+                    if (user) {
+                        if (user.password == deToken.password) {
+                            state.userInfor = user;
+                        } else {
+                            localStorage.removeItem("token")
+                        }
+                    } else {
+                        localStorage.removeItem("token")
                     }
+                } else {
+                    localStorage.removeItem("token")
                 }
+
             });
+            /*   builder.addCase(checkUser.fulfilled, (state, action) => {
+                  console.log("du lieu khi checktoken", action.payload)
+                  let deToken = checkToken(action.payload.token, process.env.REACT_APP_JWT_KEY, process.env.REACT_APP_JWT_KEY);
+                  let user = action.payload.users.find(user => user.userName == deToken.userName);
+                  console.log("🚀 ~ file: userLogin.slice.js:107 ~ builder.addCase ~  user:",  user.id)
+  
+                  return user
+                 
+                 
+              }); */
+
             // xử lý các pending và rejected
             builder.addMatcher(
                 (action) => {
@@ -92,7 +127,6 @@ const userLoginSlice = createSlice(
                 (state, action) => {
                     if (action.meta) {
                         if (action.meta.requestStatus == "pending") {
-                            console.log("đã vào pending của api: ", action.type)
                             // if (action.type == "deleteUserByid/pending") {
                             //     console.log("trường hợp pending của api delete")
                             // }
@@ -117,6 +151,7 @@ const userLoginSlice = createSlice(
 export const userLoginActions = {
     ...userLoginSlice.actions,
     login,
-    checkTokenLocal
+    checkTokenLocal,
+    checkUser
 }
 export default userLoginSlice.reducer;

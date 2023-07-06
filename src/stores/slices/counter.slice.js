@@ -100,7 +100,8 @@ const counterSlice = createSlice(
                     }
                     return user
                 })
-            });
+            })
+
             // xử lý các pending và rejected
             builder.addMatcher(
                 (action) => {

@@ -11,6 +11,7 @@ export default function Login() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const userLoginStore = useSelector((store) => store.userLoginStore);
+    console.log("🚀 ~ file: Logins.jsx:14 ~ Login ~ userLoginStore :", userLoginStore )
 
     
 
@@ -22,11 +23,16 @@ export default function Login() {
                         localStorage.getItem("token")
                     )
                 );
+                
             }
         } else {
             navigate("/");
         }
     }, [userLoginStore.userInfor]);
+    useEffect(() => {
+        dispatch(userLoginActions.checkUser(localStorage.getItem("token")));
+    }, [userLoginStore.userInfor]);
+    
     return (
         <div className="container-login">
             {userLoginStore.loading ? <Loading></Loading> : <></>}
@@ -34,7 +40,6 @@ export default function Login() {
                 <form
                     onSubmit={(eventForm) => {
                         eventForm.preventDefault(); // vô hiệu hành vi mặc định form
-
                         if (
                             eventForm.target.inputUserName.value == "" ||
                             eventForm.target.inputPassword.value == ""
@@ -94,6 +99,7 @@ export default function Login() {
                     <button
                         type="submit"
                         className="btn btn-primary button"
+                     
                     >
                         Login
                     </button>

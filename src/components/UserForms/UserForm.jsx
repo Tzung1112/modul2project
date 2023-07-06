@@ -7,12 +7,10 @@ export default function UserForm(props) {
     <div className='userForm_container'>
         <form className='forms' onSubmit={(event) => {
             event.preventDefault(); // ngăn chặn hành vi gọi action của form
-
             if (event.target.userName.value == "") {
                 alert("Vui lòng điền user name")
                 return
             }
-
             let newUser = {
                 name: event.target.userName.value,
                 email: event.target.userEmail.value,

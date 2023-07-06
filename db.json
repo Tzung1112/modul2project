@@ -7,33 +7,9 @@
       "price": 145414231
     },
     {
-      "id": 2,
-      "productName": "Hồ Cá Thủy Sinh Rong Nho",
-      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQs3gvzakZ3hbb1uJvsF0oNdzKp4nL6jH80bw&usqp=CAU",
-      "price": 145414231
-    },
-    {
-      "id": 3,
-      "productName": "Hồ Cá Thủy Sinh Rong Rủi",
-      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRe2V6quozOgW8U9esYTADNGJWr3SVoSmdjnA&usqp=CAU",
-      "price": 145414231
-    },
-    {
-      "id": 4,
-      "productName": "Hồ Cá Thủy Sinh Rong ",
-      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqRFTiA60GTOp2UUo90pP3UMmLvWCdjiqIAA&usqp=CAU",
-      "price": 145414231
-    },
-    {
       "id": 5,
       "productName": "Hồ Cá Thủy Sinh Rong Biển",
       "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEv9I5fv8dwRnVXTvm9f7rGbknmqwIL02y-w&usqp=CAU",
-      "price": 145414231
-    },
-    {
-      "id": 6,
-      "productName": "Hồ Cá Thủy Sinh Rong Biển",
-      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoQmMS9QUIDHe6Yv_uJrRoErKbcMR0L7hhQw&usqp=CAU",
       "price": 145414231
     },
     {
@@ -52,22 +28,12 @@
   "users": [
     {
       "id": 1,
-      "userName": "admin",
-      "password": "123",
-      "isAdmin": true,
-      "firstName": "Thu",
-      "lastName": "Hương",
-      "email": "thuhuong@gmail.com",
-      "avatar": "https://firebasestorage.googleapis.com/v0/b/learnfirebase-afb02.appspot.com/o/userAvatars%2Fadmin.jpg?alt=media&token=3482a408-7ed1-41c6-b18f-eb730dc02623"
-    },
-    {
-      "id": 2,
       "userName": "trungtrac",
       "password": "123456",
       "isAdmin": true,
       "firstName": "Phước",
       "lastName": "Nguyễn",
-      "email": "thuhuong@gmail.com",
+      "email": "tl.com",
       "avatar": "https://firebasestorage.googleapis.com/v0/b/learnfirebase-afb02.appspot.com/o/userAvatars%2Fadmin.jpg?alt=media&token=3482a408-7ed1-41c6-b18f-eb730dc02623"
     },
     {
@@ -78,8 +44,75 @@
       "lastName": "trac",
       "email": "a@gmail.com",
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2iZxuB8qbL-5ixjG8tc-RqZWx5AiJYSkePQ&usqp=CAU",
-      "cart": [],
-      "id": 4
+      "cart": [
+        {
+          "productId": 1,
+          "productName": "Hồ Cá Thủy Sinh Rong Biển",
+          "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNNxQ-U2IFK0SWX3eGkjHf1LemB5TI0kI4hA&usqp=CAU",
+          "price": 145414231
+        },
+        {
+          "productId": 1,
+          "productName": "Hồ Cá Thủy Sinh Rong Biển",
+          "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNNxQ-U2IFK0SWX3eGkjHf1LemB5TI0kI4hA&usqp=CAU",
+          "price": 145414231
+        },
+        {
+          "productId": 1,
+          "productName": "Hồ Cá Thủy Sinh Rong Biển",
+          "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNNxQ-U2IFK0SWX3eGkjHf1LemB5TI0kI4hA&usqp=CAU",
+          "price": 145414231
+        },
+        {
+          "productId": 1,
+          "productName": "Hồ Cá Thủy Sinh Rong Biển",
+          "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNNxQ-U2IFK0SWX3eGkjHf1LemB5TI0kI4hA&usqp=CAU",
+          "price": 145414231
+        },
+        {
+          "productId": 1,
+          "productName": "Hồ Cá Thủy Sinh Rong Biển",
+          "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNNxQ-U2IFK0SWX3eGkjHf1LemB5TI0kI4hA&usqp=CAU",
+          "price": 145414231
+        },
+        {
+          "productId": 1,
+          "productName": "Hồ Cá Thủy Sinh Rong Biển",
+          "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNNxQ-U2IFK0SWX3eGkjHf1LemB5TI0kI4hA&usqp=CAU",
+          "price": 145414231
+        },
+        {
+          "productId": 1,
+          "productName": "Hồ Cá Thủy Sinh Rong Biển",
+          "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNNxQ-U2IFK0SWX3eGkjHf1LemB5TI0kI4hA&usqp=CAU",
+          "price": 145414231
+        },
+        {
+          "productId": 1,
+          "productName": "Hồ Cá Thủy Sinh Rong Biển",
+          "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNNxQ-U2IFK0SWX3eGkjHf1LemB5TI0kI4hA&usqp=CAU",
+          "price": 145414231
+        },
+        {
+          "productId": 1,
+          "productName": "Hồ Cá Thủy Sinh Rong Biển",
+          "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNNxQ-U2IFK0SWX3eGkjHf1LemB5TI0kI4hA&usqp=CAU",
+          "price": 145414231
+        },
+        {
+          "productId": 1,
+          "productName": "Hồ Cá Thủy Sinh Rong Biển",
+          "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNNxQ-U2IFK0SWX3eGkjHf1LemB5TI0kI4hA&usqp=CAU",
+          "price": 145414231
+        },
+        {
+          "productId": 1,
+          "productName": "Hồ Cá Thủy Sinh Rong Biển",
+          "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNNxQ-U2IFK0SWX3eGkjHf1LemB5TI0kI4hA&usqp=CAU",
+          "price": 145414231
+        }
+      ],
+      "id": 2
     }
   ]
 }

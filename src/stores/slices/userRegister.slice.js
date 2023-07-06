@@ -1,6 +1,14 @@
 import axios from "axios";
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
+const findAllUsers = createAsyncThunk(
+    "findAllUsers",
+    async () => {
+        let res = await axios.get(process.env.REACT_APP_SERVER_JSON + 'users');
+        return res.data
+    }
+)
+
 const createNewUsers = createAsyncThunk(
     "createNewUsers",
     async (newUser) => {
@@ -10,9 +18,10 @@ const createNewUsers = createAsyncThunk(
     }
 )
 
+
 const registerSlice = createSlice(
     {
-        name: "counter",
+        name: "register",
         initialState: {
             counter: 0,
             loading: false,
@@ -20,17 +29,16 @@ const registerSlice = createSlice(
         },
         extraReducers: (builder) => {
             // find all users
-           
+            builder.addCase(findAllUsers.fulfilled, (state, action) => {
+                state.loading = false;
+                state.users = [...action.payload]
+            });
             // create new user
             builder.addCase(createNewUsers.fulfilled, (state, action) => {
                 state.loading = false;
                 state.users.push(action.payload)
             });
-            // delete user
-           
-            // set status user
             
-            // xử lý các pending và rejected
             builder.addMatcher(
                 (action) => {
                     if (action.meta) {
@@ -55,7 +63,9 @@ const registerSlice = createSlice(
 )
 export const registerActions = {
     ...registerSlice.actions,
-    createNewUsers
+    createNewUsers,
+    findAllUsers
+    
 
     
 }

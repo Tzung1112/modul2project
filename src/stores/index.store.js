@@ -4,6 +4,7 @@ import counterReducer from './slices/counter.slice'
 import productReducer from './slices/product.slice'
 import userLoginReducer from './slices/userLogin.slice'
 import userRegisterRedicer from './slices/userRegister.slice'
+import detailReducer from "./slices/detail.slice"
 
 
 
@@ -13,7 +14,8 @@ const store = configureStore(
             counterStore: counterReducer,
             productStore: productReducer,
             userLoginStore: userLoginReducer,
-            userRegisterStore: userRegisterRedicer
+            userRegisterStore: userRegisterRedicer,
+            detailStore:detailReducer
         }
     }
 )

@@ -1,0 +1,46 @@
+.profile-container{
+    max-width: 1440px;
+        height: 600px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        padding: 20px;
+        .profile{
+            width: 800px;
+            height: 500px;
+            border: 2px solid black;
+            border-radius: 20px;
+            padding: 50px;
+            .wellcome{
+                text-align: center;
+                border-bottom: 2px solid black;
+                border-left: 2px solid black;
+                border-top: 2px solid black;
+            }
+            .header-profile{
+                display: flex;
+                border-bottom: 2px solid black;
+                padding: 10px;
+                border-right: 2px solid black;
+                .avt-profile{
+                    width: 200px;
+                    height: 200px;
+                    border: 2px solid black;
+                    border-radius: 50%;
+                    flex: 1;
+                   
+                }
+                .name-profile{
+                    flex: 2;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+            .body-profile{
+                text-align: center;
+                border-bottom: 2px solid black;
+            }
+        }
+}

@@ -9,8 +9,10 @@ import Bodys from "./Bodys";
 export default function Home() {
     return (
         <div className="home-container">
-            {<Carousels></Carousels>}
-            <Bodys></Bodys>
+            <div className="body-home">
+                {<Carousels></Carousels>}
+                <Bodys></Bodys>
+            </div>
         </div>
     );
 }

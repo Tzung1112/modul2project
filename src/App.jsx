@@ -25,7 +25,22 @@ function App() {
                             import("@pages/product/Products")
                         )()}
                     />
-
+                    <Route
+                        path="/profile"
+                        element={LazyLoad(() =>
+                            import("@pages/UserProfile/Profile")
+                        )()}
+                    />
+                    <Route
+                        path="/cart"
+                        element={LazyLoad(() => import("@pages/Carts/Carts"))()}
+                    />
+                    <Route
+                        path="/detail-cart"
+                        element={LazyLoad(() =>
+                            import("@pages/Carts/DetailCart")
+                        )()}
+                    />
                     <Route
                         path="/login"
                         element={LazyLoad(() =>

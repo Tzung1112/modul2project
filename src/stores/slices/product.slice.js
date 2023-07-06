@@ -8,6 +8,16 @@ const findAllProducts = createAsyncThunk(
         return res.data
     }
 )
+const addProduct = createAsyncThunk(
+    "addProduct",
+    async (newProduct) => {
+        //http://localhost:4000/users
+        let res = await axios.patch(process.env.REACT_APP_SERVER_JSON + 'users/' + newProduct.usersId, newProduct.data);
+        return res.data
+
+    }
+)
+
 const productSlice = createSlice(
     {
         name: "counter",
@@ -20,12 +30,18 @@ const productSlice = createSlice(
 
                 state.listProducts = [...action.payload]
             });
+            builder.addCase(addProduct.fulfilled, (state, action) => {
+                state.loading = false;
+                //state.cart.push(action.payload)
+            });
         }
     }
 )
+
 export const productActions = {
     ...productSlice.actions,
     findAllProducts,
+    addProduct
 
 }
 export default productSlice.reducer;
